@@ -1,7 +1,8 @@
 defmodule PhoenixCrud.QuoteController do
   use Phoenix.Controller
-
-  alias PhoenixCrud.Router
+  require IEx
+   
+  # alias PhoenixCrud.Router
   import PhoenixCrud.Router.Helpers
 
   plug :action
@@ -13,6 +14,7 @@ defmodule PhoenixCrud.QuoteController do
   end
   
   def index(conn, _params) do
+    IEx.pry
     conn
     |> assign(:quotes, Repo.all(PhoenixCrud.Quote))
     |> render("index.html")
